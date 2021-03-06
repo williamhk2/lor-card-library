@@ -1,0 +1,23 @@
+{
+  "name": "lor-card-library",
+  "version": "1.0.0",
+  "description": "A simple tool for generate a single json file with all cards from Legends of Runeterra (per language)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamhk2/lor-card-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamhk2/lor-card-library/issues"
+  },
+  "homepage": "https://github.com/williamhk2/lor-card-library#readme"
+}
