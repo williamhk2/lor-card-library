@@ -3,9 +3,9 @@ A simple tool for generate a single json file with all cards from Legends of Run
 
 ### Instructions
 
-- Copy all files of a specific set or all set from a specific language, inside cards folder. You can get all cards files at https://developer.riotgames.com/docs/lor.
+- Copy all files of a specific set or all sets from a specific language, inside cards folder. You can get all card files at https://developer.riotgames.com/docs/lor.
 - Execute the command `npm run dev dir=cards language=en_us` (choose your language)
-- The tool will generate a single file library.json, inside cards folder, with all cards from all files included. 
+- The tool will generate a single file `library.json`, inside cards folder, with all cards from all files included. 
 
 Example `library.json` file:
 ```
