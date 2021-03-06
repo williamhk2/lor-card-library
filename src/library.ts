@@ -3,21 +3,15 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export class Library {
-    cards: Array<Card>;
-    language: string;
-    count: number;
-    page: number;
-    total: number;
 
-    static fromFiles(dir: string, language: string) {
+    static fromFiles(language: string) {
         let cards = new Array<Card>();
         let count: number = 0;
+        const DIR = 'cards';
 
-        fs.unlinkSync(dir + '/library.json');
-
-        fs.readdirSync(dir).forEach(file => {
+        fs.readdirSync(DIR).forEach(file => {
             if (path.extname(file).toLowerCase() === '.json') {
-                let cardsFromJson = fs.readFileSync(path.resolve(dir + '/' + file),'utf8');
+                let cardsFromJson = fs.readFileSync(path.resolve(`${DIR}/${file}`),'utf8');
                 JSON.parse(cardsFromJson).map((card: any) => {
                     cards.push(Library.getCard(card, language));
                     count++;
@@ -33,7 +27,7 @@ export class Library {
         }
 
         if (cards.length > 0) {
-            fs.writeFileSync(dir + '/library.json', JSON.stringify(library));
+            fs.writeFileSync(DIR + `/library/${language}.json`, JSON.stringify(library));
         }
     }
 
